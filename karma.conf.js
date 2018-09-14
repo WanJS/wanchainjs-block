@@ -5,7 +5,7 @@ module.exports = function (config) {
     browserNoActivityTimeout: 60000,
     frameworks: ['browserify', 'detectBrowsers', 'tap'],
     files: [
-      './tests/difficulty.js'
+      './tests/index.js'
     ],
     preprocessors: {
       'tests/*.js': ['browserify', 'env']

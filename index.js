@@ -1,6 +1,6 @@
-const Common = require('ethereumjs-common')
-const ethUtil = require('ethereumjs-util')
-const Tx = require('ethereumjs-tx')
+const Common = require('wanchainjs-common')
+const ethUtil = require('wanchainjs-util')
+const Tx = require('wanchainjs-tx')
 const Trie = require('merkle-patricia-tree')
 const BN = ethUtil.BN
 const rlp = ethUtil.rlp
@@ -14,7 +14,7 @@ const BlockHeader = require('./header')
  * @param {Array} opts Options
  * @param {String|Number} opts.chain The chain for the block [default: 'mainnet']
  * @param {String} opts.hardfork Hardfork for the block [default: null, block number-based behaviour]
- * @param {Object} opts.common Alternatively pass a Common instance (ethereumjs-common) instead of setting chain/hardfork directly
+ * @param {Object} opts.common Alternatively pass a Common instance (wanchainjs-common) instead of setting chain/hardfork directly
  * @prop {Header} header the block's header
  * @prop {Array.<Header>} uncleList an array of uncle headers
  * @prop {Array.<Buffer>} raw an array of buffers containing the raw blocks.

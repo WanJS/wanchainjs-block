@@ -1,15 +1,15 @@
 'use strict'
-const Transaction = require('ethereumjs-tx')
-const ethUtil = require('ethereumjs-util')
+const Transaction = require('wanchainjs-tx')
+const ethUtil = require('wanchainjs-util')
 const Block = require('./')
 const blockHeaderFromRpc = require('./header-from-rpc')
 
 module.exports = blockFromRpc
 
 /**
- * Creates a new block object from Ethereum JSON RPC.
- * @param {Object} blockParams - Ethereum JSON RPC of block (eth_getBlockByNumber)
- * @param {Array.<Object>} Optional list of Ethereum JSON RPC of uncles (eth_getUncleByBlockHashAndIndex)
+ * Creates a new block object from Wanchain JSON RPC.
+ * @param {Object} blockParams - Wanchain JSON RPC of block (eth_getBlockByNumber)
+ * @param {Array.<Object>} Optional list of Wanchain JSON RPC of uncles (eth_getUncleByBlockHashAndIndex)
  */
 function blockFromRpc (blockParams, uncles) {
   uncles = uncles || []
@@ -41,7 +41,7 @@ function blockFromRpc (blockParams, uncles) {
 
 function normalizeTxParams (_txParams) {
   const txParams = Object.assign({}, _txParams)
-  // hot fix for https://github.com/ethereumjs/ethereumjs-util/issues/40
+  // hot fix for https://github.com/WanJS/wanchainjs-util/issues/40
   txParams.gasLimit = (txParams.gasLimit === undefined) ? txParams.gas : txParams.gasLimit
   txParams.data = (txParams.data === undefined) ? txParams.input : txParams.data
   // strict byte length checking

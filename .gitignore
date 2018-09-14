@@ -76,3 +76,4 @@ package-lock.json
 # Yarn Integrity file
 .yarn-integrity
 
+.idea
